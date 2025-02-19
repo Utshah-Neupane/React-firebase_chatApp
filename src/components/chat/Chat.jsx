@@ -30,8 +30,7 @@ const Chat = () => {
     };
   }, [chatId]);
 
-  console.log(chat);
-
+  // console.log(chat);
 
   const handleEmoji =  e =>{
     setText(prev => prev + e.emoji);
@@ -66,87 +65,18 @@ const Chat = () => {
 
 
       <div className = 'center'>
-
-        <div className = 'message own'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message own'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <img src = 'https://thumbs.dreamstime.com/z/low-angle-view-yellow-metal-building-roof-structure-construction-area-against-blue-sky-background-218817928.jpg?ct=jpeg' alt = ""/>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message own'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
-        <div className = 'message own'>
-          <img src = './avatar.png' alt = ""/>
-          <div className = 'texts'>
-            <p>
-              I don't know if I am good or bad. If I am doing things the right way.
-              Am I supposed to study hard or practice more. I have no idea. I am confused.
-            </p>
-            <span> 1 min ago</span>
-          </div>
-        </div>
-
+        { chat?.messages?.map((message) => (
+            <div className = 'message own' key = {message?.createAt}>
+              <div className = 'texts'>
+                {message.img && <img src={message.img} alt=""/>}
+                <p>
+                  {message.text}
+                </p>
+                {/* <span> {message}</span> */}
+              </div>
+            </div>
+          ))}
         <div ref = {endRef}></div>
-
       </div>
 
 
