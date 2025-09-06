@@ -24,5 +24,8 @@ dist-ssr
 *.sw?
 
 .env
+<<<<<<< HEAD
 for_me.txt
 
+=======
+>>>>>>> 36b776fe4af33c6bd784abd3b673d3e290444bc1
